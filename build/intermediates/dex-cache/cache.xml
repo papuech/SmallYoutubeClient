@@ -3,12 +3,48 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\libs\YouTubeAndroidPlayerApi.jar"
+        jar="C:\Users\Paul\.android\build-cache\af07281f30dc3fb1791e12d86a109eb8847e2f09\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
-        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_342709579a8193dfac60b7b0f3f2fc27f939c811\classes.dex" />
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_73da7043f0284e1c005bcb6ace2a45f6c5bebc21\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Paul\.android\build-cache\0492347089a0c022dd76eecee957a717aeade1cc\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e98e3d8f1e8ba6460c0faad77b41121f7efc9ef4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Paul\.android\build-cache\9829b6fb04ebb3f1b1ad2f93954934ff1b510ffa\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_434fe9ae01bf59680a38db21464143953ab30539\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Paul\.android\build-cache\ef60b026877d9e3ec5e41a0b109956c4387de34c\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_05476bc4475512cff9f86077296e90e6b5a0bc1c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Paul\.android\build-cache\70c1bd36d5d27e0d7c399912ddda8b9d786e42ad\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3c7004d04580d3e3b5191cde7584187a5215c0e3\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -21,11 +57,38 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\libs\YouTubeAndroidPlayerApi.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3c4f96ff493456651cc7bdb0b47e10eb25545a16">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\2\YouTubeAndroidPlayerApi_342709579a8193dfac60b7b0f3f2fc27f939c811\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Paul\.android\build-cache\e3ab5f4a803a222417752c3b970f0c813fcaa4e7\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cf0aa0c04a60f52bb9b4c86d81a02d2f5ca4fefb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Paul\.android\build-cache\1b03a7888bae267ad6a7e17a1c3ec7d559d3c9e2\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_09c3881e19bc5f8cb8bfe989f72d61d6340c1e8c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="5d9066b7418612d7b0fc01e10959b5c12c6b8f07">
+        sha1="77f6235d8bb536ec415c01befcc68bec4eddf671">
         <dex dex="C:\Users\Paul\Desktop\MobileApplicationDevelopment\MyYoutube\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_fc3a9598baa90a0dbaeaccff304fe4ea568034e5\classes.dex" />
     </item>
 

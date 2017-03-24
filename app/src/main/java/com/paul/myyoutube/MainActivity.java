@@ -8,11 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
@@ -20,7 +23,7 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private String currentSearch;
 
@@ -30,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     VideoYou videos;
     AsyncHttpClient client;
     Gson gson;
+    int setResults = 25;
+    Spinner number;
 
 
     @Override
@@ -42,17 +47,25 @@ public class MainActivity extends AppCompatActivity {
         spinner.setVisibility(View.GONE);
         final Button button = (Button) findViewById(R.id.searcher);
         final EditText searchBox = (EditText)findViewById(R.id.searchBox);
-        final TextView message = (TextView)findViewById(R.id.message);
         final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.myRecyclerView);
+
+        number = (Spinner)findViewById(R.id.setResults);
+        Integer[] items = new Integer[]{5,15,25,50};
+        ArrayAdapter<Integer> intAdapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item, items);
+        number.setAdapter(intAdapter);
+        //number.setSelection(0);
+        number.setOnItemSelectedListener(this);
+
         final ImageView imageTest = (ImageView)findViewById(R.id.testimage);
 
         //CHECK INTERNET
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            message.setText("Connected");
+            Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
+
         } else {
-            message.setText("Not Connected");
+            Toast.makeText(this, "Disconnected", Toast.LENGTH_SHORT).show();
         }
 
         //LISTENERS
@@ -60,10 +73,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 spinner.setVisibility(View.VISIBLE);
                 currentSearch = String.valueOf(searchBox.getText());
+                //setResults = number.getv
                 //log.v("laVariable", currentSearch);
                 if(currentSearch != null && !currentSearch.isEmpty()){
-
-                    message.setText(currentSearch);
 
                     layoutManager = new LinearLayoutManager(MainActivity.this);
                     recyclerView.setLayoutManager(layoutManager);
@@ -80,27 +92,37 @@ public class MainActivity extends AppCompatActivity {
                             gson = new Gson();
                             videos = gson.fromJson(responsestr, VideoYou.class);
                             adapter = new VideoYouAdapter(videos);
-                            message.setText("ok");
                             recyclerView.setAdapter(adapter);
                             spinner.setVisibility(View.GONE);
                         }
 
                         @Override
                         public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                            message.setText("onFailure");
+                            Toast.makeText(MainActivity.this, "onFailure", Toast.LENGTH_SHORT).show();
                         }
                     });
 
                 }
                 else{
-                    message.setText("Empty search");
+                    Toast.makeText(MainActivity.this, "Empty search", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
     }
 
     public String setURL(String word){
-        word =  "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+word+"&type=video&maxResults=25&key=AIzaSyAwTis3xA3KtQ3TPvx61EUYSA_rb8m7F3w";
+        word =  "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+word+"&type=video&maxResults="+setResults+"&key=AIzaSyAwTis3xA3KtQ3TPvx61EUYSA_rb8m7F3w";
         return word;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        setResults = Integer.getInteger(adapterView.getItemAtPosition(i).toString());
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
