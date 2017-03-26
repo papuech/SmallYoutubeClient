@@ -8,13 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -23,7 +19,9 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 
 import cz.msebera.android.httpclient.Header;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+//import static com.paul.myyoutube.R.id.setResults;
+
+public class MainActivity extends AppCompatActivity {
 
     private String currentSearch;
 
@@ -33,8 +31,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     VideoYou videos;
     AsyncHttpClient client;
     Gson gson;
-    int setResults = 25;
-    Spinner number;
+
 
 
     @Override
@@ -48,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         final Button button = (Button) findViewById(R.id.searcher);
         final EditText searchBox = (EditText)findViewById(R.id.searchBox);
         final RecyclerView recyclerView = (RecyclerView)findViewById(R.id.myRecyclerView);
-
+        /*
         number = (Spinner)findViewById(R.id.setResults);
         Integer[] items = new Integer[]{5,15,25,50};
         ArrayAdapter<Integer> intAdapter = new ArrayAdapter<Integer>(this,android.R.layout.simple_spinner_item, items);
@@ -57,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         number.setOnItemSelectedListener(this);
 
         final ImageView imageTest = (ImageView)findViewById(R.id.testimage);
-
+        */
         //CHECK INTERNET
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -112,10 +109,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     public String setURL(String word){
-        word =  "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+word+"&type=video&maxResults="+setResults+"&key=AIzaSyAwTis3xA3KtQ3TPvx61EUYSA_rb8m7F3w";
+        word =  "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+word+"&type=video&maxResults=25&key=AIzaSyAwTis3xA3KtQ3TPvx61EUYSA_rb8m7F3w";
         return word;
     }
-
+    /*
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         setResults = Integer.getInteger(adapterView.getItemAtPosition(i).toString());
@@ -125,4 +122,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+    */
 }
